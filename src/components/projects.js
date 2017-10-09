@@ -57,7 +57,6 @@ module.exports = [
         imgFit: 'cover'
       }
     ],
-    url: '35.156.58.36/mobileauth',
     builtWith: ['Node', 'Angular2', 'TypeScript'],
     learnText: 'Demo:'
   },

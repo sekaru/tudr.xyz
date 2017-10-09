@@ -8,10 +8,8 @@
       <li><a class="nav-link" href="https://www.linkedin.com/in/tudor-sandulescu-257bb5130">LinkedIn</a></li>
     </ul>
 
-    <div id="intro">
-      <h2>
-        I'm a final year Computer Science student.
-      </h2>
+    <div class="content">
+      <h2>I'm a final year Computer Science student.</h2>
       <h3>
         I'm particularly interested in network communication, apps for connectivity/discovery and game development. 
         
@@ -20,6 +18,15 @@
       </h3>
     </div>
     <router-view></router-view>
+    <div class="content">
+      <br>
+
+      <h2>Contact me</h2>
+      <h3>first.last@outlook.com</h3>
+
+      <h2>CV</h2>
+      <h3><a class="nav-link" href="cv.pdf">The latest copy of my CV is available here</a></h3>
+    </div>
   </div>
 </template>
 
@@ -69,7 +76,7 @@ li {
   }
 }
 
-#intro {
+.content {
   width: 90%;
   margin: 0 auto;
 }

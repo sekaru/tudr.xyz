@@ -4,8 +4,8 @@
       <div class="card" 
            v-for="project in projects"           
            v-bind:class="{expanded: project.expanded, flipable: !project.expanded, 'expanded-anim': project.expanded && !project.slides[project.slideIndex].img}" 
-           v-on:click="clickProject(project)" 
-           v-bind:style="{'background-color': project.color}">
+           v-on:click="clickProject(project)"        
+           v-bind:style="{'background-color': project.color, cursor: project.slides[project.slideIndex].text.length===0 ? 'pointer': 'default'}">
 
         <transition-group name="img-fade" mode="out-in" v-if="project.expanded">
           <img 
@@ -69,12 +69,23 @@ export default {
       this.$set(project, 'closeLock', false);
       this.$set(project, 'controlLock', false);
       this.$set(project, 'showText', false);
-    }); 
+    });
   },
 
   methods: {
     clickProject: function(project) {
-      if(project.expanded || project.closeLock || project.controlLock) return;
+      if(project.closeLock || project.controlLock) return;
+
+      if(project.expanded) {
+        if(project.slides[project.slideIndex].text.length===0) {
+          if(this.notLastSlide(project)) {
+            this.nextSlide(project);
+          } else {
+            for(var i=0; i<project.slides.length-1; i++) this.prevSlide(project);
+          }
+        }
+        return;
+      }
 
       this.projects.forEach(project => {
         project.expanded = false;
@@ -135,7 +146,7 @@ export default {
         if(project.expanded) {
           project.slideIndex = project.slideIndex<project.slides.length-1 ? project.slideIndex+1 : 0; 
         }
-      }, 5000);
+      }, 6000);
     },
 
     showImg: function(img, project) {
