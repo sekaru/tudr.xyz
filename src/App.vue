@@ -38,7 +38,7 @@ h1 {
   text-align: center;
 }
 
-h2, h3 {
+h3 {
   font-weight: normal;
 }
 
