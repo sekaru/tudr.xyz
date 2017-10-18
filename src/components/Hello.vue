@@ -5,7 +5,7 @@
            v-for="project in projects"           
            v-bind:class="{expanded: project.expanded, flipable: !project.expanded, 'expanded-anim': project.expanded && !project.slides[project.slideIndex].img}" 
            v-on:click="clickProject(project)"        
-           v-bind:style="{'background-color': project.color, cursor: project.slides[project.slideIndex].text.length===0 ? 'pointer': 'default'}">
+           v-bind:style="{'background-color': project.color, cursor: !project.expanded ? 'pointer' : project.slides[project.slideIndex].text.length===0 ? 'pointer': 'default'}">
 
         <transition-group name="img-fade" mode="out-in" v-if="project.expanded">
           <img 
