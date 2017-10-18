@@ -9,7 +9,7 @@
     </ul>
 
     <div class="content">
-      <h2>I'm a final year Computer Science student.</h2>
+      <h2>I'm a final year Computer Science student</h2>
       <h3>
         I'm particularly interested in network communication, apps for connectivity/discovery and game development. 
         
