@@ -66,8 +66,24 @@ module.exports = [
     color: 'sandybrown',
     slides: [
       {
-        text: 'A web-app for storing potential holiday destinations and accommodation options. Anyone can create a lobby and share their lobby code to allow friends to add their own places and vote on existing ones',
+        text: 'A web-app for storing potential going-out destinations (e.g. hotels, bars, restaurants). Anyone can create a lobby and share their lobby code to allow friends to add their own places and vote on existing ones',
         img: ''
+      },
+      {
+        text: '',
+        img: require('../assets/jpi1.png')
+      },
+      {
+        text: '',
+        img: require('../assets/jpi2.png')
+      },
+      {
+        text: '',
+        img: require('../assets/jpi3.png')
+      },
+      {
+        text: '',
+        img: require('../assets/jpi4.png')
       }
     ],
     url: 'justpick.it',
@@ -165,7 +181,7 @@ module.exports = [
     color: 'deeppink',
     slides: [
       {
-        text: 'A tool for finding and scheduling other players for small multiplayer games. Users can add games, create and view event times in order to see when other players will be online',
+        text: '<em>Work in progress.</em><br><br>A tool for finding and scheduling other players for small multiplayer games. Users can add games, create and view event times in order to see when other players will be online',
         img: ''
       }
     ],
