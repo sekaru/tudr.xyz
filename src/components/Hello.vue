@@ -1,12 +1,16 @@
 <template>
   <div class="hello">
+    <intro></intro>
+
     <div id="cards">
       <div class="card" 
-           v-for="project in projects"           
+           v-for="project in projects"
+           :key="project.name"           
            v-bind:class="{expanded: project.expanded, flipable: !project.expanded, 'expanded-anim': project.expanded && !project.slides[project.slideIndex].img}" 
            v-on:click="clickProject(project)"        
            v-bind:style="{'background-color': project.color, cursor: !project.expanded ? 'pointer' : project.slides[project.slideIndex].text.length===0 ? 'pointer': 'default'}">
 
+        <!-- Slide background(s) -->
         <transition-group name="img-fade" mode="out-in" v-if="project.expanded">
           <img 
             v-for="slide of project.slides" 
@@ -17,23 +21,29 @@
         </transition-group>
         
         <p class="info-container" v-if="(project.slides[project.slideIndex].text.length>0 && project.expanded) || !project.expanded">
+          <!-- Close button -->
           <span v-if="project.expanded && project.showText" v-on:click="closeProject(project)" class="control close">X</span>
           
+          <!-- Title -->
           <span class="title">{{project.title}}</span>
 
           <span v-if="project.expanded && project.showText">
             <div class="slide-container">
+              <!-- Slide text -->
               <transition name="fade" mode="out-in">
                 <span :key="project.slideIndex" v-html="project.slides[project.slideIndex].text"></span>
               </transition>
             </div>
 
+            <!-- Tech -->
             <br>
             Built with <span class="techs">{{project.builtWith.join(', ')}}</span>
 
+            <!-- Links -->
             <br>
             <span v-if="project.url">{{project.learnText ? project.learnText : 'Learn more at'}} <a :href="'http://' + project.url">{{project.url}}</a></span>
 
+            <!-- Slide controls -->
             <br>
             <span v-if="project.slides.length>1" class="slide-num">
               <span v-show="notFirstSlide(project)" v-on:click="prevSlide(project)" class="control"><</span> 
@@ -42,6 +52,7 @@
             </span>
 
           </span>
+          <!-- Not expanded, just show the date -->
           <span v-else>
             <br>
             {{project.date}}
@@ -302,5 +313,20 @@ a {
 
 .img-fade-enter, .img-fade-leave-active {
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90vw;
+    height: 70vw;
+    margin-bottom: 1em;
+    font-size: 1.25rem;
+  }
+
+  .expanded {
+    width: 100vw;
+    height: 50vh;
+    font-size: 0.8rem !important;        
+  }
 }
 </style>

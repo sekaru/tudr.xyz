@@ -104,7 +104,7 @@ module.exports = [
     learnText: 'Demo:'
   },
   {
-    title: 'Interviews',
+    title: 'Interviews App',
     date: 'July 2017',
     color: 'mediumpurple',
     slides: [

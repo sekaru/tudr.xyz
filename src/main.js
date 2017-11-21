@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Intro from './components/Intro'
+
+Vue.component('intro', Intro)
 
 Vue.config.productionTip = false
 

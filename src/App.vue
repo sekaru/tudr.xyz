@@ -7,22 +7,6 @@
       <li><a class="nav-link" href="https://twitter.com/sekaru_">Twitter</a></li>
       <li><a class="nav-link" href="https://www.linkedin.com/in/tudor-sandulescu-257bb5130">LinkedIn</a></li>
     </ul>
-
-    <div class="content">
-      <h2>I'm a final year Computer Science student</h2>
-      <h3>
-        I'm particularly interested in network communication, apps for connectivity/discovery and game development. 
-        
-        Below you can find my personal projects, each of which is available on GitHub. 
-        My games and anything related to those are available at <a class="nav-link" href="http://sleepystudios.net">Sleepy Studios</a>.
-      </h3>
-
-      <h2>Contact me</h2>
-      <h3>firstlast@outlook.com</h3>
-
-      <h2>CV</h2>
-      <h3><a class="nav-link" href="cv.pdf">The latest copy of my CV is available here</a></h3>
-    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -77,7 +61,6 @@ li {
   width: 90%;
   margin: 0 auto;
 }
-
 
 .nav-link {
   color: limegreen;
