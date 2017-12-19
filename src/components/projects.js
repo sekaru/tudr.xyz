@@ -34,7 +34,7 @@ module.exports = [
     color: 'limegreen',
     slides: [
       {
-        text: 'A secure mobile authentication system built for Capital One as part of a group project. The system allows a user to login on the web, authenticate on their phone via facial recongition or touch and once authenticated, the webpage would automatically update to log them in',
+        text: 'A secure mobile authentication system built for Capital One as part of a group project. The system allows a user to login on the web, authenticate on their phone via facial recognition or touch and once authenticated, the webpage would automatically update to log them in',
         img: ''
       },
       {
@@ -181,12 +181,16 @@ module.exports = [
     color: 'deeppink',
     slides: [
       {
-        text: '<em>Work in progress.</em><br><br>A tool for finding and scheduling other players for small multiplayer games. Users can add games, create and view event times in order to see when other players will be online',
+        text: 'A tool for finding and scheduling other players for small multiplayer games. Users can add games, create and view event times in order to see when other players will be online',
         img: ''
+      },
+      {
+        text: '',
+        img: require('../assets/dangle.png')        
       }
     ],
     url: 'dangl.es',
-    builtWith: ['Node', 'Angular4', 'Material', 'SASS', 'TypeScript'],
+    builtWith: ['Node', 'Angular4', 'Material', 'SASS', 'TypeScript', 'Pug'],
   },
   {
     title: 'Eyes',
