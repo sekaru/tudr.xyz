@@ -195,6 +195,18 @@ module.exports = [
       {
         text: '',
         img: require('../assets/dangle2.png')
+      },
+      {
+        text: 'Reports and requests to change info about games are handled through the Waker bot and rendered serverside using Pug',
+        img: ''
+      },
+      {
+        text: '',
+        img: require('../assets/dangle3.png')
+      },
+      {
+        text: '',
+        img: require('../assets/dangle4.png')
       }
     ],
     url: 'dangl.es',
@@ -239,7 +251,7 @@ module.exports = [
   {
     title: 'Just Map It',
     date: 'November 2017',
-    color: 'orange',
+    color: 'coral',
     slides: [
       {
         text: 'A Just Pick It mobile companion app allowing you to add places to your lobby by tapping on them in a Google Maps interface',
