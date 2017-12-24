@@ -9,7 +9,10 @@
     </div>
 
     <div id="ms-container">
-      <img v-for="i in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]" :key="i" :src="require('../assets/ms/p' + i + '.gif')" />
+      <video v-for="i in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]" :key="i" loop autoplay>
+        <source :src="require('../assets/ms/p' + i + '.mp4')" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </template>
@@ -26,12 +29,12 @@ export default {
 </script>
 
 <style scoped>
-img {
+video {
   height: 14vw;
   transition: 0.2s all;  
 }
 
-img:hover {
+video:hover {
   transform: scale(1.8, 1.8);
 }
 
@@ -60,12 +63,12 @@ img:hover {
 }
 
 @media (max-width: 768px) {
-  img {
+  video {
     width: 100vw;
     height: auto;
   }
 
-  img:hover {
+  video:hover {
     transform: none;
   }
 

@@ -27,8 +27,10 @@
           <!-- Title -->
           <span class="title">{{project.title}}</span>
 
-          <span v-if="project.expanded && project.showText">
+          <span v-if="project.expanded && project.showText">            
             <div class="slide-container">
+              <span v-if="project.wip"><strong>Work in progress<br><br></strong></span>
+              
               <!-- Slide text -->
               <transition name="fade" mode="out-in">
                 <span :key="project.slideIndex" v-html="project.slides[project.slideIndex].text"></span>
@@ -326,7 +328,7 @@ a {
   .expanded {
     width: 100vw;
     height: 50vh;
-    font-size: 0.8rem !important;        
+    font-size: 1rem !important;        
   }
 }
 </style>

@@ -187,6 +187,14 @@ module.exports = [
       {
         text: '',
         img: require('../assets/dangle.png')        
+      },
+      {
+        text: 'Users can also participate in discussions using the custom-built forum system',
+        img: ''
+      },
+      {
+        text: '',
+        img: require('../assets/dangle2.png')
       }
     ],
     url: 'dangl.es',
@@ -227,5 +235,20 @@ module.exports = [
       }
     ],
     builtWith: ['Vue'],
+  },
+  {
+    title: 'Just Map It',
+    date: 'November 2017',
+    color: 'orange',
+    slides: [
+      {
+        text: 'A Just Pick It mobile companion app allowing you to add places to your lobby by tapping on them in a Google Maps interface',
+        img: ''
+      }
+    ],
+    url: 'github.com/sekaru/justmapit',
+    builtWith: ['React Native', 'Google Maps API'],
+    learnText: 'Source:',
+    wip: true
   }
 ]
