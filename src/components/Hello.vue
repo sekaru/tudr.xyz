@@ -188,7 +188,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.6s;
+  transition: all 0.4s;
 }
 
 .title {
@@ -204,25 +204,25 @@ a {
 }
 
 .flipable:hover {
-  animation: 0.25s flip ease-out;
+  animation: 0.3s flip linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  font-size: 1.5rem;
+  font-size: 1.5rem;          
 }
 
 @keyframes flip {
   from {
-    transform: translateY(0) scale(1);
+    transform: scale(1);
     z-index: 3;    
   }
 
   80% {
-    transform: scale(1.2);
+    transform: scale(1.25);
   }
 
   to {
-    transform: translateY(0) scale(1);
-    filter: saturate(150%);
+    transform: scale(1);
+    filter: saturate(125%);
     z-index: 3;
   }
 }
@@ -232,6 +232,7 @@ a {
   height: 50vh;
   font-size: 1.25rem;
   text-align: left;
+  transition: all 0.4s;
 }
 
 .expanded img {
@@ -255,7 +256,7 @@ a {
   }
 
   50% {
-    filter: saturate(150%);
+    filter: saturate(125%);
   }
 
   100% {
