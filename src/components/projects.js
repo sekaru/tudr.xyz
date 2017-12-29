@@ -251,16 +251,39 @@ module.exports = [
   {
     title: 'Just Map It',
     date: 'November 2017',
-    color: 'coral',
+    color: '#ff933e',
     slides: [
       {
         text: 'A Just Pick It mobile companion app allowing you to add places to your lobby by tapping on them in a Google Maps interface',
         img: ''
+      },
+      {
+        text: '',
+        img: require('../assets/jmi0.png')
+      },
+      {
+        text: '',
+        img: require('../assets/jmi1.png')
+      },
+      {
+        text: '',
+        img: require('../assets/jmi2.png')
+      },
+      {
+        text: '',
+        img: require('../assets/jmi3.png')
+      },
+      {
+        text: '',
+        img: require('../assets/jmi4.png')
+      },
+      {
+        text: '',
+        img: require('../assets/jmi5.png')
       }
     ],
     url: 'github.com/sekaru/justmapit',
-    builtWith: ['React Native', 'Google Maps API'],
-    learnText: 'Source:',
-    wip: true
+    builtWith: ['React Native', 'Google Maps & Places APIs'],
+    learnText: 'Source:'
   }
 ]
