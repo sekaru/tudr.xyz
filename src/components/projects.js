@@ -70,6 +70,10 @@ module.exports = [
         img: ''
       },
       {
+        text: 'The backend was originally built using Express and LowDB (a lodash-based database package) but was rewritten in 2018 to use serverless architecture (specifically Amazon Lambda) coupled with DynamoDB',
+        img: ''
+      },
+      {
         text: '',
         img: require('../assets/jpi1.png')
       },
@@ -87,7 +91,7 @@ module.exports = [
       }
     ],
     url: 'justpick.it',
-    builtWith: ['Node', 'Angular4', 'Bootstrap', 'TypeScript'],
+    builtWith: ['Node', 'Angular4', 'Bootstrap', 'TypeScript', 'Lambda', 'DynamoDB'],
   },
   {
     title: 'Waker',
@@ -97,10 +101,14 @@ module.exports = [
       {
         text: 'A routing system for Sleepy Studios servers. Using Waker we can easily query server locations and statuses. If a server is down the bot will notify us via Twitter',
         img: ''
+      },
+      {
+        text: 'Initially implemented using Express, in early 2018 I rewrote it to take advantage of serverless architecture using Amazon Lambda',
+        img: ''
       }
     ],
     url: 'twitter.com/waker_bot',
-    builtWith: ['JavaScript'],
+    builtWith: ['Node', 'Lambda'],
     learnText: 'Demo:'
   },
   {
@@ -183,6 +191,10 @@ module.exports = [
       {
         text: 'A tool for finding and scheduling other players for small multiplayer games. Users can add games, create and view event times in order to see when other players will be online',
         img: ''
+      },
+      {
+        text: '',
+        img: require('../assets/dangle0.png')
       },
       {
         text: '',
