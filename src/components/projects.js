@@ -246,7 +246,7 @@ module.exports = [
   {
     title: 'tudr.xyz',
     date: 'September 2017',
-    color: 'silver',
+    color: '#999',
     slides: [
       {
         text: 'You are here. A portfolio site built in a few days to learn Vue.js. The app features a dynamic slide system used to display each project',
@@ -297,5 +297,20 @@ module.exports = [
     url: 'github.com/sekaru/justmapit',
     builtWith: ['React Native', 'Google Maps & Places APIs'],
     learnText: 'Source:'
-  }
+  },
+  {
+    title: 'LIFX Visualiser',
+    date: 'January 2018',
+    color: '#191414',
+    additionalClasses: 'party',
+    slides: [
+      {
+        text: 'Visualise your Spotify music through a LIFX device using Spotify\'s web API and audio analysis tool',
+        img: ''
+      }
+    ],
+    url: 'github.com/sekaru/spotify-lifx-visualiser',
+    builtWith: ['Node', 'Pug'],
+    learnText: 'Source:'
+  },
 ]

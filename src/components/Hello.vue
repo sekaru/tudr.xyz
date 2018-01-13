@@ -6,10 +6,10 @@
       <div class="card" 
            v-for="project in projects"
            :key="project.name"           
-           v-bind:class="{expanded: project.expanded, flipable: !project.expanded, 'expanded-anim': project.expanded && !project.slides[project.slideIndex].img}" 
            v-on:click="clickProject(project)"        
+           v-bind:class="[{expanded: project.expanded, flipable: !project.expanded, 'expanded-anim': project.expanded && !project.slides[project.slideIndex].img}, project.additionalClasses]"           
            v-bind:style="{'background-color': project.color, cursor: !project.expanded ? 'pointer' : project.slides[project.slideIndex].text.length===0 ? 'pointer': 'default'}">
-
+          
         <!-- Slide background(s) -->
         <transition-group name="img-fade" mode="out-in" v-if="project.expanded">
           <img 
@@ -183,7 +183,7 @@ a {
 .card {
   position: relative;
   width: 300px;
-  height: 15vw;
+  height: 250px;
   color: white;
   display: flex;
   align-items: center;
@@ -217,7 +217,7 @@ a {
   }
 
   80% {
-    transform: scale(1.25);
+    transform: scale(1.2);
   }
 
   to {
@@ -245,7 +245,7 @@ a {
 }
 
 .expanded-anim {
-  animation: 1s hue ease;
+  animation: 1s hue linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -318,6 +318,20 @@ a {
   opacity: 0;
 }
 
+.party {
+  animation: party-anim 2s infinite ease-out;
+}
+
+@keyframes party-anim {
+  0%   {background: hsl(0, 80%, 50%)}
+  20%  {background: hsl(30, 100%, 60%);}
+  40%  {background: hsl(120, 80%, 50%);}
+  60%  {background: hsl(180, 80%, 50%);}
+  70%  {background: hsl(220, 80%, 50%);}
+  80%  {background: hsl(300, 80%, 50%);}
+  100%  {background: hsl(360, 80%, 50%);}
+}
+
 @media (max-width: 768px) {
   .card {
     width: 90vw;
@@ -327,9 +341,15 @@ a {
   }
 
   .expanded {
-    width: 100vw;
+    width: 90vw;
     height: 50vh;
     font-size: 1rem !important;        
+  }
+
+  @keyframes flip {
+    80% {
+      transform: scale(1.1);
+    }
   }
 }
 </style>
