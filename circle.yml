@@ -5,4 +5,4 @@ deployment:
   prod:
     branch: master
     commands:
-      - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://s3awscd --delete
+      - aws s3 sync /home/ubuntu/tudr.xyz s3://tudr.xyz --delete
