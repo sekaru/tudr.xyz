@@ -9,6 +9,6 @@ deployment:
     branch: master
     commands:
       - npm run build
+      - mv /home/ubuntu/tudr.xyz/cv.pdf /home/ubuntu/tudr.xyz/dist/cv.pdf 
       - aws s3 sync /home/ubuntu/tudr.xyz/dist s3://tudr.xyz --delete
-      - aws s3 sync /home/ubuntu/tudr.xyz/cv.pdf s3://tudr.xyz
   
