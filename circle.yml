@@ -10,5 +10,5 @@ deployment:
     commands:
       - npm run build
       - aws s3 sync /home/ubuntu/tudr.xyz/dist s3://tudr.xyz --delete
-      - aws s3 sync /home/ubuntu/tudr.xyz/cv.pdf s3://tudr.xyz --delete
+      - aws s3 sync /home/ubuntu/tudr.xyz/cv.pdf s3://tudr.xyz
   
