@@ -313,4 +313,27 @@ module.exports = [
     builtWith: ['Node', 'Pug'],
     learnText: 'Source:'
   },
+  {
+    title: 'Octopocto',
+    date: 'February 2018',
+    color: '#7f3bba',
+    slides: [
+      {
+        text: 'A web app that automatically generates a portfolio from your public GitHub profile and shows your favourite languages and topics',
+        img: ''
+      },
+      {
+        text: '',
+        img: require('../assets/octo1.png'),
+        imgFit: 'cover'        
+      },
+      {
+        text: '',
+        img: require('../assets/octo2.png')  
+      }
+    ],
+    url: 'sekaru.github.io/Octopocto',
+    builtWith: ['React', 'GitHub API'],
+    learnText: 'Demo:'
+  }
 ]
