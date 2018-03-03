@@ -8,7 +8,7 @@
            :key="project.name"           
            v-on:click="clickProject(project)"        
            v-bind:class="[{expanded: project.expanded, flipable: !project.expanded, 'expanded-anim': project.expanded && !project.slides[project.slideIndex].img}, project.additionalClasses]"           
-           v-bind:style="{'background-color': project.color, cursor: !project.expanded ? 'pointer' : project.slides[project.slideIndex].text.length===0 ? 'pointer': 'default'}">
+           v-bind:style="{background: project.color, cursor: !project.expanded ? 'pointer' : project.slides[project.slideIndex].text.length===0 ? 'pointer': 'default'}">
           
         <!-- Slide background(s) -->
         <transition-group name="img-fade" mode="out-in" v-if="project.expanded">
@@ -67,7 +67,6 @@
 
 <script>
 export default {
-  name: 'hello',
   data () {
     return {
       projects: require('./projects.js')
@@ -189,6 +188,7 @@ a {
   align-items: center;
   justify-content: center;
   transition: all 0.4s;
+  margin: 0.2em;
 }
 
 .title {
@@ -204,31 +204,12 @@ a {
 }
 
 .flipable:hover {
-  animation: 0.3s flip linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  font-size: 1.5rem;          
-}
-
-@keyframes flip {
-  from {
-    transform: scale(1);
-    z-index: 3;    
-  }
-
-  80% {
-    transform: scale(1.2);
-  }
-
-  to {
-    transform: scale(1);
-    filter: saturate(125%);
-    z-index: 3;
-  }
+  outline: 0.2em solid rgba(255, 255, 255, 0.7);
+  outline-offset: -15px;
 }
 
 .expanded {
-  width: 600px;
+  width: 40%;
   height: 50vh;
   font-size: 1.25rem;
   text-align: left;
@@ -256,7 +237,7 @@ a {
   }
 
   50% {
-    filter: saturate(125%);
+    filter: saturate(150%);
   }
 
   100% {

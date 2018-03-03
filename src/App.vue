@@ -63,12 +63,12 @@ li {
 }
 
 .nav-link {
-  color: limegreen;
+  color: #00e5ff;
   text-decoration: none;
 }
 
 .nav-link:hover {
-  font-style: italic;
+  text-decoration: underline;
 }
 
 @keyframes crazy {

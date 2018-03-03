@@ -2,7 +2,7 @@ module.exports = [
   {
     title: 'Sleepy Studios',
     date: '2009 onwards',
-    color: 'rgb(42, 31, 109)',
+    color: 'linear-gradient(to bottom, #2a1f6d, #271d66, #241b5f, #221958, #1f1751)',
     slides: [
       {
         text: 'Game development studio I co-founded. To date we\'ve made over 15 games, including two commercial projects, one of which (Superstatic) is available on Steam',
@@ -26,12 +26,12 @@ module.exports = [
       },
     ],
     url: 'sleepystudios.net',
-    builtWith: ['Java', 'LibGDX', 'Slick', 'Kryonet', 'Visual Basic'],
+    builtWith: ['Java (LibGDX, Slick, Kryonet)', 'JavaScript (Phaser)', 'Visual Basic'],
   },
   {
     title: 'MobileAuth',
     date: 'October 2016',
-    color: 'limegreen',
+    color: 'linear-gradient(to bottom, #00c853, #00bb4e, #00af48, #00a243, #00963e)',
     slides: [
       {
         text: 'A secure mobile authentication system built for Capital One as part of a group project. The system allows a user to login on the web, authenticate on their phone via facial recognition or touch and once authenticated, the webpage would automatically update to log them in',
@@ -63,7 +63,7 @@ module.exports = [
   {
     title: 'Just Pick It',
     date: 'March 2017',
-    color: 'sandybrown',
+    color: 'linear-gradient(to bottom, #ffab40, #fba234, #f79927, #f38f17, #ef8600)',
     slides: [
       {
         text: 'A web-app for storing potential going-out destinations (e.g. hotels, bars, restaurants). Anyone can create a lobby and share their lobby code to allow friends to add their own places and vote on existing ones',
@@ -91,12 +91,12 @@ module.exports = [
       }
     ],
     url: 'justpick.it',
-    builtWith: ['Node', 'Angular4', 'Bootstrap', 'TypeScript', 'Lambda', 'DynamoDB'],
+    builtWith: ['Node', 'Angular4', 'Bootstrap', 'TypeScript', 'Amazon Lambda', 'DynamoDB'],
   },
   {
     title: 'Waker',
     date: 'July 2017',
-    color: 'gold',
+    color: 'linear-gradient(to bottom, #fbc02d, #f3b725, #eaae1c, #e2a512, #d99c04)',
     slides: [
       {
         text: 'A routing system for Sleepy Studios servers. Using Waker we can easily query server locations and statuses. If a server is down the bot will notify us via Twitter',
@@ -108,13 +108,13 @@ module.exports = [
       }
     ],
     url: 'twitter.com/waker_bot',
-    builtWith: ['Node', 'Lambda'],
+    builtWith: ['Node', 'Amazon Lambda'],
     learnText: 'Demo:'
   },
   {
     title: 'Interviews App',
     date: 'July 2017',
-    color: 'mediumpurple',
+    color: 'linear-gradient(to bottom, #9370db, #8761d6, #7b52d1, #6f42cc, #6231c6)',
     slides: [
       {
         text: 'An app I co-built during an internship at MHR. Allows potential candidates to record themselves answering interview questions, retry questions and review interviews by playing back individual clips',
@@ -137,12 +137,12 @@ module.exports = [
         img: require('../assets/interview4.png')
       }
     ],
-    builtWith: ['React Native', 'JSX'],
+    builtWith: ['React Native'],
   },
   {
     title: 'Check In',
     date: 'August 2017',
-    color: 'crimson',
+    color: 'linear-gradient(to bottom, #880e4f, #7f0d4a, #760c45, #6e0b40, #650a3b)',
     slides: [
       {
         text: 'Another app built at MHR. The app aims to augment employee check-ins by managing a list of agreements and talking points between a manager and employee with speech recognition to easily store conversation notes for later review',
@@ -186,7 +186,7 @@ module.exports = [
   {
     title: 'Dangle',
     date: 'August 2017',
-    color: 'deeppink',
+    color: 'linear-gradient(to bottom, #ff4081, #fc3575, #f82869, #f4195d, #ef0051)',
     slides: [
       {
         text: 'A tool for finding and scheduling other players for small multiplayer games. Users can add games, create and view event times in order to see when other players will be online',
@@ -227,7 +227,7 @@ module.exports = [
   {
     title: 'Eyes',
     date: 'September 2017',
-    color: 'skyblue',
+    color: 'linear-gradient(to bottom, #4fc3f7, #42bbf4, #34b4f0, #23aced, #0aa4e9)',
     slides: [
       {
         text: 'A visualisation of Waker showing physical server locations and statuses',
@@ -246,7 +246,7 @@ module.exports = [
   {
     title: 'tudr.xyz',
     date: 'September 2017',
-    color: '#999',
+    color: 'linear-gradient(to bottom, #444444, #404040, #3b3b3b, #373737, #333333)',
     slides: [
       {
         text: 'You are here. A portfolio site built in a few days to learn Vue.js. The app features a dynamic slide system used to display each project',
@@ -261,9 +261,41 @@ module.exports = [
     builtWith: ['Vue'],
   },
   {
+    title: 'Yoop',
+    date: 'November 2017 - February 2018',
+    color: 'linear-gradient(to bottom, #df5a64, #d94e58, #d2424b, #cb353f, #c42632)',
+    slides: [
+      {
+        text: 'A platform aiming to eliminate fake news by allowing users to rate news as part of a self-regulating community',
+        img: ''
+      },
+      {
+        text: 'I worked as front end developer on their web frontend, Chrome extension and mobile app. My role was to redesign the existing front ends as well as to bring it up to modern web standards',
+        img: ''
+      },
+      {
+        text: '',
+        img: require('../assets/yoop1.png')
+      },
+      {
+        text: '',
+        img: require('../assets/yoop2.png')
+      },
+      {
+        text: '',
+        img: require('../assets/yoop3.png')
+      },
+      {
+        text: '',
+        img: require('../assets/yoop4.png')
+      }
+    ],
+    builtWith: ['React, React Native']
+  },
+  {
     title: 'Just Map It',
     date: 'November 2017',
-    color: '#ff933e',
+    color: 'linear-gradient(to bottom, #ff933e, #fb8932, #f67e24, #f27315, #ed6800)',
     slides: [
       {
         text: 'A Just Pick It mobile companion app allowing you to add places to your lobby by tapping on them in a Google Maps interface',
@@ -310,13 +342,13 @@ module.exports = [
       }
     ],
     url: 'github.com/sekaru/spotify-lifx-visualiser',
-    builtWith: ['Node', 'Pug'],
+    builtWith: ['Node', 'Pug', 'Spotify API'],
     learnText: 'Source:'
   },
   {
     title: 'Octopocto',
     date: 'February 2018',
-    color: '#7f3bba',
+    color: 'linear-gradient(to bottom, #7f3bba, #7737ae, #6f33a2, #673097, #5f2c8b)',
     slides: [
       {
         text: 'A web app that automatically generates a portfolio from your public GitHub profile and shows your favourite languages and topics',
