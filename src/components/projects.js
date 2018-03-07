@@ -270,7 +270,7 @@ module.exports = [
         img: ''
       },
       {
-        text: 'I worked as front end developer on their web frontend, Chrome extension and mobile app. My role was to redesign the existing front ends as well as to bring it up to modern web standards',
+        text: 'I worked on Yoop\'s React frontend, Chrome extension and React Native mobile app. I redesigned and reworked existing front ends, brought them up to modern web standards and contributed UX improvements',
         img: ''
       },
       {
