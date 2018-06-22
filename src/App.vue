@@ -20,6 +20,7 @@ export default {
 <style>
 h1 {
   text-align: center;
+  font-size: 4rem;
 }
 
 h3 {
@@ -27,6 +28,8 @@ h3 {
 }
 
 ul {
+  margin-top: -2em;
+  margin-bottom: 2em;
   list-style: none;
   text-align: center;
   padding: 0;

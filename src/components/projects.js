@@ -5,7 +5,7 @@ module.exports = [
     color: 'linear-gradient(to bottom, #2a1f6d, #271d66, #241b5f, #221958, #1f1751)',
     slides: [
       {
-        text: 'Game development studio I co-founded. To date we\'ve made over 15 games, including two commercial projects, one of which (Superstatic) is available on Steam',
+        text: 'Game development studio I co-founded. To date we\'ve made over 15 games, including three commercial projects, two of which (Superstatic and Scrunk) are available on Steam',
         img: require('../assets/ss.png'),
         imgFit: 'cover'
       },
@@ -249,7 +249,7 @@ module.exports = [
     color: 'linear-gradient(to bottom, #444444, #404040, #3b3b3b, #373737, #333333)',
     slides: [
       {
-        text: 'You are here. A portfolio site built in a few days to learn Vue.js. The app features a dynamic slide system used to display each project',
+        text: 'You are here. A portfolio site built over a weekend to learn Vue. The app features a dynamic slide system used to display each project',
         img: ''
       },
       {
@@ -367,5 +367,19 @@ module.exports = [
     url: 'sekaru.github.io/Octopocto',
     builtWith: ['React', 'GitHub API'],
     learnText: 'Demo:'
+  },
+  {
+    title: 'LightShow',
+    date: 'June 2018',
+    color: 'linear-gradient(to bottom, #1cae74, #1aa36c, #199865, #178d5d, #158256)',
+    slides: [
+      {
+        text: 'An Android app for creating custom light shows using your LIFX devices (work in progress!)',
+        img: ''
+      }
+    ],
+    url: 'github.com/sekaru/lifx-lightshow',
+    builtWith: ['React Native'],
+    learnText: 'Source:'
   }
 ]

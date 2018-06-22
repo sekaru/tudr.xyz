@@ -21,9 +21,6 @@
         </transition-group>
         
         <p class="info-container" v-if="(project.slides[project.slideIndex].text.length>0 && project.expanded) || !project.expanded">
-          <!-- Close button -->
-          <span v-if="project.expanded && project.showText" v-on:click="closeProject(project)" class="control close">X</span>
-          
           <!-- Title -->
           <span class="title">{{project.title}}</span>
 
@@ -81,6 +78,12 @@ export default {
       this.$set(project, 'closeLock', false);
       this.$set(project, 'controlLock', false);
       this.$set(project, 'showText', false);
+
+      project.expanded = true;
+
+      setTimeout(() => {
+        project.showText = true;
+      }, 350);
     });
   },
 
@@ -98,29 +101,6 @@ export default {
         }
         return;
       }
-
-      this.projects.forEach(project => {
-        project.expanded = false;
-        project.slideIndex = 0;
-        project.showText = false;
-        clearInterval(project.interval);
-      });
-
-      this.createSlideInterval(project);
-      project.expanded = true;
-
-      setTimeout(() => {
-        project.showText = true;
-      }, 350)
-    },
-
-    closeProject: function(project) {
-      project.expanded = false;
-      project.closeLock = true;
-
-      setTimeout(() => {
-        project.closeLock = false;
-      }, 200);
     },
 
     notFirstSlide: function(project) {
@@ -132,17 +112,13 @@ export default {
     },
 
     prevSlide: function(project) {
-      clearInterval(project.interval);
       project.slideIndex--;
       this.setControlLock(project);
-      this.createSlideInterval(project);
     },
 
     nextSlide: function(project) {
-      clearInterval(project.interval);
       project.slideIndex++;
       this.setControlLock(project);
-      this.createSlideInterval(project);
     },
 
     setControlLock: function(project) {
@@ -150,15 +126,6 @@ export default {
       setTimeout(() => {
         project.controlLock = false;
       }, 200);
-    },
-
-    createSlideInterval: function(project) {
-      project.interval = setInterval(() => {
-        // increment which slide to show
-        if(project.expanded) {
-          project.slideIndex = project.slideIndex<project.slides.length-1 ? project.slideIndex+1 : 0; 
-        }
-      }, 6000);
     },
 
     showImg: function(img, project) {
@@ -194,6 +161,7 @@ a {
 .title {
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .flipable {
@@ -209,9 +177,9 @@ a {
 }
 
 .expanded {
-  width: 40%;
-  height: 50vh;
-  font-size: 1.25rem;
+  width: 30vw;
+  height: 40vh;
+  font-size: 1rem;
   text-align: left;
   transition: all 0.4s;
 }
@@ -260,7 +228,7 @@ a {
 
 .slide-num {
   float: right;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .control {
@@ -310,7 +278,7 @@ a {
   60%  {background: hsl(180, 80%, 50%);}
   70%  {background: hsl(220, 80%, 50%);}
   80%  {background: hsl(300, 80%, 50%);}
-  100%  {background: hsl(360, 80%, 50%);}
+  100% {background: hsl(360, 80%, 50%);}
 }
 
 @media (max-width: 768px) {
