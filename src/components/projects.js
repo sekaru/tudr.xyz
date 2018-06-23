@@ -221,8 +221,9 @@ module.exports = [
         img: require('../assets/dangle4.png')
       }
     ],
-    url: 'dangl.es',
+    url: 'github.com/sekaru/dangle',
     builtWith: ['Node', 'Angular4', 'Material', 'SASS', 'TypeScript', 'Pug'],
+    learnText: 'Source:'
   },
   {
     title: 'Eyes',
@@ -239,9 +240,9 @@ module.exports = [
         imgFit: 'cover'
       }
     ],
-    url: 'sleepystudios.net/eyes',
+    url: 'github.com/sekaru/eyes',
     builtWith: ['Angular4', 'TypeScript'],
-    learnText: 'Demo:'
+    learnText: 'Source:'
   },
   {
     title: 'tudr.xyz',
@@ -249,7 +250,7 @@ module.exports = [
     color: 'linear-gradient(to bottom, #444444, #404040, #3b3b3b, #373737, #333333)',
     slides: [
       {
-        text: 'You are here. A portfolio site built over a weekend to learn Vue. The app features a dynamic slide system used to display each project',
+        text: 'You are here! A portfolio site built over a weekend to learn Vue. The app features a dynamic slide system used to display each project and utilises CircleCI',
         img: ''
       },
       {
@@ -366,6 +367,20 @@ module.exports = [
     ],
     url: 'sekaru.github.io/Octopocto',
     builtWith: ['React', 'GitHub API'],
+    learnText: 'Demo:'
+  },
+  {
+    title: 'Eyes2',
+    date: 'May 2018',
+    color: 'linear-gradient(to bottom, #454a70, #3a3e5e, #30334d, #26283d, #1c1e2d)',
+    slides: [
+      {
+        text: 'An Eyes rewrite made to be faster, more convenient and more transparent. It\'s built with Inferno for speed and has support for extra server descriptions such as if the server is still in development or discontinued',
+        img: ''
+      }
+    ],
+    url: 'sleepystudios.net/eyes',
+    builtWith: ['Inferno'],
     learnText: 'Demo:'
   },
   {

@@ -22,7 +22,7 @@
         
         <p class="info-container" v-if="(project.slides[project.slideIndex].text.length>0 && project.expanded) || !project.expanded">
           <!-- Title -->
-          <span class="title">{{project.title}}</span>
+          <span class="title">{{project.title}} <span class="date">{{project.date}} </span></span>
 
           <span v-if="project.expanded && project.showText">            
             <div class="slide-container">
@@ -37,9 +37,9 @@
             <!-- Tech -->
             <br>
             Built with <span class="techs">{{project.builtWith.join(', ')}}</span>
+            <br>
 
             <!-- Links -->
-            <br>
             <span v-if="project.url">{{project.learnText ? project.learnText : 'Learn more at'}} <a :href="'http://' + project.url">{{project.url}}</a></span>
 
             <!-- Slide controls -->
@@ -162,6 +162,11 @@ a {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  float: right;
 }
 
 .flipable {
