@@ -1,19 +1,19 @@
 <template>
   <div class="content">
-    <h2>I'm a Computer Science graduate</h2>
-    <h3>
-      I'm interested in network communication, apps for connectivity/discovery and game development. 
-      All my games are available at <a class="nav-link" href="https://sleepystudios.net">Sleepy Studios</a>.
-    </h3>
+    <h1>Tudor Sandulescu</h1>
 
-    <h2>Contact me</h2>
-    <h3>firstnamelastname@outlook.com</h3>
-
-    <h2>CV</h2>
-    <h3><a class="nav-link" href="cv.pdf">The latest copy of my CV is available here</a></h3>
+    <ul>
+      <li><a class="nav-link" href="https://github.com/sekaru">GitHub</a></li>
+      <li><a class="nav-link" href="https://twitter.com/sekaru_">Twitter</a></li>
+      <li><a class="nav-link" href="https://www.linkedin.com/in/tudor-sandulescu-257bb5130">LinkedIn</a></li>
+      <li><a class="nav-link" href="cv.pdf">CV</a></li>
+      <li>firstnamelastname@outlook.com</li>
+    </ul>
 
     <!-- <h2>Motion Stills</h2> -->
     <!-- <h3><router-link class="nav-link" :to="'motionstills'">Motion Stills</router-link></h3> -->
+
+    <p style="text-align: right">Compsci Grad. Currently working at Capital One. Interested in networking, IoT, tools and game development</p>
   </div>
 </template>
 

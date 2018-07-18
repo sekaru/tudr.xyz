@@ -5,7 +5,7 @@ module.exports = [
     color: 'linear-gradient(to bottom, #2a1f6d, #271d66, #241b5f, #221958, #1f1751)',
     slides: [
       {
-        text: 'Game development studio I co-founded. To date we\'ve made over 15 games, including three commercial projects, two of which (Superstatic and Scrunk) are available on Steam',
+        text: 'Game development studio I co-founded. To date we\'ve made over 15 games, including three commercial projects, two of which (Superstatic and Scrunk) are available on Steam.',
         img: require('../assets/ss.png'),
         imgFit: 'cover'
       },
@@ -15,7 +15,7 @@ module.exports = [
         imgFit: 'cover'
       },
       {
-        text: 'We regularly participate in game jams, especially Ludum Dare. These usually culminate in new project ideas (e.g. Waker and Dangle)',        
+        text: 'We regularly participate in game jams, especially Ludum Dare. These usually culminate in new project ideas (e.g. Waker and Dangle). We also like to open source most our jam games too!',        
         img: require('../assets/vigilante.png'),
         imgFit: 'cover'
       },
@@ -26,7 +26,7 @@ module.exports = [
       },
     ],
     url: 'sleepystudios.net',
-    builtWith: ['Java (LibGDX, Slick, Kryonet)', 'JavaScript (Phaser)', 'Visual Basic'],
+    builtWith: ['Unity', 'C#', 'JavaScript', 'Java', 'VB6'],
   },
   {
     title: 'MobileAuth',
@@ -34,7 +34,7 @@ module.exports = [
     color: 'linear-gradient(to bottom, #00c853, #00bb4e, #00af48, #00a243, #00963e)',
     slides: [
       {
-        text: 'A secure mobile authentication system built for Capital One as part of a group project. The system allows a user to login on the web, authenticate on their phone via facial recognition or touch and once authenticated, the webpage would automatically update to log them in',
+        text: 'A secure authentication system built for Capital One as part of a group project. A user logs in on the web, authenticates on their phone (using face or touch) and once authenticated, the webpage automatically updates to log them in',
         img: ''
       },
       {
@@ -108,7 +108,7 @@ module.exports = [
       }
     ],
     url: 'twitter.com/waker_bot',
-    builtWith: ['Node', 'Amazon Lambda'],
+    builtWith: ['Node', 'Serverless', 'Amazon Lambda'],
     learnText: 'Demo:'
   },
   {
@@ -386,10 +386,11 @@ module.exports = [
   {
     title: 'LightShow',
     date: 'June 2018',
+    wip: true,
     color: 'linear-gradient(to bottom, #1cae74, #1aa36c, #199865, #178d5d, #158256)',
     slides: [
       {
-        text: 'An Android app for creating custom light shows using your LIFX devices (work in progress!)',
+        text: 'An Android app for creating custom light shows using your LIFX devices',
         img: ''
       }
     ],

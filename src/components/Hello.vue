@@ -1,17 +1,17 @@
 <template>
   <div class="hello">
-    <intro></intro>
+    <intro id="intro"></intro>
 
     <div id="cards">
       <div class="card" 
            v-for="project in projects"
            :key="project.name"           
            v-on:click="clickProject(project)"        
-           v-bind:class="[{expanded: project.expanded, flipable: !project.expanded, 'expanded-anim': project.expanded && !project.slides[project.slideIndex].img}, project.additionalClasses]"           
-           v-bind:style="{background: project.color, cursor: !project.expanded ? 'pointer' : project.slides[project.slideIndex].text.length===0 ? 'pointer': 'default'}">
+           v-bind:class="[{expanded: true}, project.additionalClasses]"           
+           v-bind:style="{background: project.color, cursor: project.slides[project.slideIndex].text.length===0 ? 'pointer': 'default'}">
           
         <!-- Slide background(s) -->
-        <transition-group name="img-fade" mode="out-in" v-if="project.expanded">
+        <transition-group name="img-fade" mode="out-in">
           <img 
             v-for="slide of project.slides" 
             v-if="showImg(slide.img, project)" 
@@ -20,43 +20,36 @@
             v-bind:style="{'object-fit': slide.imgFit ? slide.imgFit : 'contain'}">          
         </transition-group>
         
-        <p class="info-container" v-if="(project.slides[project.slideIndex].text.length>0 && project.expanded) || !project.expanded">
+        <div class="info-container" v-if="project.slides[project.slideIndex].text.length>0">
           <!-- Title -->
-          <span class="title">{{project.title}} <span class="date">{{project.date}} </span></span>
+          <div class="title">{{project.title}} <span class="date">{{project.date}} </span></div>
+          
+          <div class="slide-container">
+            <div v-if="project.wip"><strong>Work in progress<br><br></strong></div>
+            
+            <!-- Slide text -->
+            <transition name="fade" mode="out-in">
+              <span :key="project.slideIndex" v-html="project.slides[project.slideIndex].text"></span>
+            </transition>
+          </div>
 
-          <span v-if="project.expanded && project.showText">            
-            <div class="slide-container">
-              <span v-if="project.wip"><strong>Work in progress<br><br></strong></span>
-              
-              <!-- Slide text -->
-              <transition name="fade" mode="out-in">
-                <span :key="project.slideIndex" v-html="project.slides[project.slideIndex].text"></span>
-              </transition>
-            </div>
-
+          <div style="margin-bottom: 1em">
             <!-- Tech -->
-            <br>
-            Built with <span class="techs">{{project.builtWith.join(', ')}}</span>
-            <br>
+            <div>
+              Built with <span class="techs">{{project.builtWith.join(', ')}}</span>
+            </div>
 
             <!-- Links -->
             <span v-if="project.url">{{project.learnText ? project.learnText : 'Learn more at'}} <a :href="'http://' + project.url">{{project.url}}</a></span>
-
-            <!-- Slide controls -->
-            <br>
-            <span v-if="project.slides.length>1" class="slide-num">
-              <span v-show="notFirstSlide(project)" v-on:click="prevSlide(project)" class="control"><</span> 
-              {{project.slideIndex+1}}/{{project.slides.length}} 
-              <span v-show="notLastSlide(project)" v-on:click="nextSlide(project)" class="control">></span>
-            </span>
-
-          </span>
-          <!-- Not expanded, just show the date -->
-          <span v-else>
-            <br>
-            {{project.date}}
-          </span>
-        </p>
+          </div>
+          
+          <!-- Slide controls -->
+          <div v-if="project.slides.length>1" class="slide-num">
+            <span v-on:click="prevSlide(project)" class="control"><</span> 
+            Slide {{project.slideIndex+1}}/{{project.slides.length}} 
+            <span v-on:click="nextSlide(project)" class="control">></span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -72,18 +65,10 @@ export default {
 
   created: function() {
     this.projects.forEach(project => {
-      this.$set(project, 'expanded', false);
       this.$set(project, 'slideIndex', 0);
       this.$set(project, 'slideInterval', null);
       this.$set(project, 'closeLock', false);
       this.$set(project, 'controlLock', false);
-      this.$set(project, 'showText', false);
-
-      project.expanded = true;
-
-      setTimeout(() => {
-        project.showText = true;
-      }, 350);
     });
   },
 
@@ -91,20 +76,14 @@ export default {
     clickProject: function(project) {
       if(project.closeLock || project.controlLock) return;
 
-      if(project.expanded) {
-        if(project.slides[project.slideIndex].text.length===0) {
-          if(this.notLastSlide(project)) {
-            this.nextSlide(project);
-          } else {
-            for(var i=0; i<project.slides.length-1; i++) this.prevSlide(project);
-          }
+      if(project.slides[project.slideIndex].text.length===0) {
+        if(this.notLastSlide(project)) {
+          this.nextSlide(project);
+        } else {
+          for(var i=0; i<project.slides.length-1; i++) this.prevSlide(project);
         }
-        return;
       }
-    },
-
-    notFirstSlide: function(project) {
-      return project.slideIndex!==0;
+      return;
     },
 
     notLastSlide: function(project) {
@@ -112,12 +91,12 @@ export default {
     },
 
     prevSlide: function(project) {
-      project.slideIndex--;
+      project.slideIndex = project.slideIndex===0 ? project.slides.length-1 : project.slideIndex-1;
       this.setControlLock(project);
     },
 
     nextSlide: function(project) {
-      project.slideIndex++;
+      project.slideIndex = project.slideIndex===project.slides.length-1 ? 0 : project.slideIndex+1;
       this.setControlLock(project);
     },
 
@@ -148,20 +127,21 @@ a {
 
 .card {
   position: relative;
-  width: 300px;
-  height: 250px;
   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.4s;
-  margin: 0.2em;
 }
 
 .title {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .date {
@@ -169,91 +149,55 @@ a {
   float: right;
 }
 
-.flipable {
-  cursor: pointer;
-  text-align: center;
-  font-size: 1rem;
-  transition: all 0.2s;
-}
-
-.flipable:hover {
-  outline: 0.2em solid rgba(255, 255, 255, 0.7);
-  outline-offset: -15px;
-}
-
 .expanded {
   width: 30vw;
-  height: 40vh;
+  height: 30vw;
   font-size: 1rem;
   text-align: left;
   transition: all 0.4s;
+  margin: 1em;
+  border-bottom: 0.5em solid rgba(255, 255, 255, 0.1);
 }
 
 .expanded img {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 0.5em);
   left: 0;
   top: 0;
   z-index: 0;
 }
 
-.expanded-anim {
-  animation: 1s hue linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes hue {
-  0% {
-    filter: saturate(100%);
-  }
-
-  50% {
-    filter: saturate(150%);
-  }
-
-  100% {
-    filter: saturate(100%);
-  }
-}
-
 .info-container {
-  width: 80%;
+  width: 90%;
   z-index: 1;
+  min-height: 50%;
 }
 
 .techs {
   font-style: italic;
+  font-weight: 500;
 }
 
 .slide-container {
-  height: 18vh;
+  height: 15vh;
 }
 
 .slide-num {
-  float: right;
-  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .control {
-  font-size: 1rem;
   cursor: pointer;
   transition: 0.5s;    
   opacity: 0.5;  
+  margin: 0 0.5em;
 }
 
 .control:hover {
   opacity: 1;
-}
-
-.close {
-  float: right;
-  opacity: 1;
-}
-
-.close:hover {
-  color: SALMON;
 }
 
 .fade-enter-active, .fade-leave-active {
@@ -286,24 +230,20 @@ a {
   100% {background: hsl(360, 80%, 50%);}
 }
 
+@media (max-width: 1024px) {
+  .card {
+    width: 40vw;
+    height: 40vw;
+    font-size: 0.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   .card {
     width: 90vw;
-    height: 70vw;
+    height: 90vw;
     margin-bottom: 1em;
-    font-size: 1.25rem;
-  }
-
-  .expanded {
-    width: 90vw;
-    height: 50vh;
-    font-size: 1rem !important;        
-  }
-
-  @keyframes flip {
-    80% {
-      transform: scale(1.1);
-    }
+    font-size: 0.9rem;
   }
 }
 </style>

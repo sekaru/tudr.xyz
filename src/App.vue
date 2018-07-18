@@ -1,12 +1,5 @@
 <template>
   <div id="app">
-    <h1>Tudor Sandulescu</h1>
-
-    <ul>
-      <li><a class="nav-link" href="https://github.com/sekaru">GitHub</a></li>
-      <li><a class="nav-link" href="https://twitter.com/sekaru_">Twitter</a></li>
-      <li><a class="nav-link" href="https://www.linkedin.com/in/tudor-sandulescu-257bb5130">LinkedIn</a></li>
-    </ul>
     <router-view></router-view>
   </div>
 </template>
@@ -19,7 +12,7 @@ export default {
 
 <style>
 h1 {
-  text-align: center;
+  text-align: right;
   font-size: 4rem;
 }
 
@@ -31,7 +24,7 @@ ul {
   margin-top: -2em;
   margin-bottom: 2em;
   list-style: none;
-  text-align: center;
+  text-align: right;
   padding: 0;
 }
 
@@ -44,10 +37,11 @@ li {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 30px 0;
 
   animation: 0.5s slidein linear;
   animation-iteration-count: 1;
+
+  margin: 30px 0;
 }
 
 @keyframes slidein {
@@ -66,7 +60,7 @@ li {
 }
 
 .nav-link {
-  color: #00e5ff;
+  color: #00a5dd;
   text-decoration: none;
 }
 
