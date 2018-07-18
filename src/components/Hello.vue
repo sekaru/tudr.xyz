@@ -22,11 +22,14 @@
         
         <div class="info-container" v-if="project.slides[project.slideIndex].text.length>0">
           <!-- Title -->
-          <div class="title">{{project.title}} <span class="date">{{project.date}} </span></div>
+          <div class="title">
+            {{project.title}}
+            <br>
+            <span class="date">{{project.date}}</span>
+            <span v-if="project.wip" class="wip"><strong>Work in progress<br></strong></span>
+          </div>
           
           <div class="slide-container">
-            <div v-if="project.wip"><strong>Work in progress<br><br></strong></div>
-            
             <!-- Slide text -->
             <transition name="fade" mode="out-in">
               <span :key="project.slideIndex" v-html="project.slides[project.slideIndex].text"></span>
@@ -139,14 +142,15 @@ a {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .date {
   font-size: 0.9rem;
-  float: right;
+}
+
+.wip {
+  font-size: 0.9rem;
+  margin-left: 0.5em;
 }
 
 .expanded {
