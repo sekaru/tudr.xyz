@@ -155,7 +155,7 @@ a {
 
 .expanded {
   width: 30vw;
-  height: 30vw;
+  height: 25vw;
   font-size: 1rem;
   text-align: left;
   transition: all 0.4s;
@@ -237,7 +237,7 @@ a {
 @media (max-width: 1024px) {
   .card {
     width: 40vw;
-    height: 40vw;
+    height: 35vw;
     font-size: 0.75rem;
   }
 }
@@ -245,7 +245,7 @@ a {
 @media (max-width: 768px) {
   .card {
     width: 90vw;
-    height: 90vw;
+    height: 85vw;
     margin-bottom: 1em;
     font-size: 0.9rem;
   }
