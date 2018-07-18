@@ -377,6 +377,10 @@ module.exports = [
       {
         text: 'An Eyes rewrite made to be faster, more convenient and more transparent. It\'s built with Inferno for speed and has support for extra server descriptions such as if the server is still in development or discontinued',
         img: ''
+      },
+      {
+        text: '',
+        img: require('../assets/eyes2.png')
       }
     ],
     url: 'sleepystudios.net/eyes',
