@@ -25,8 +25,11 @@
           <div class="title">
             {{project.title}}
             <br>
-            <span class="date">{{project.date}}</span>
-            <span v-if="project.wip" class="wip"><strong>Work in progress<br></strong></span>
+
+            <div class="subtitle">
+              <span class="date">{{project.date}}</span>
+              <span v-if="project.wip" class="wip"><strong>[Work in progress]<br></strong></span>
+            </div>
           </div>
           
           <div class="slide-container">
@@ -144,13 +147,11 @@ a {
   font-size: 1.5rem;
 }
 
-.date {
+.subtitle {
   font-size: 0.9rem;
-}
-
-.wip {
-  font-size: 0.9rem;
-  margin-left: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .expanded {
@@ -180,7 +181,7 @@ a {
 
 .techs {
   font-style: italic;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .slide-container {
