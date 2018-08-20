@@ -23,8 +23,7 @@
         <div class="info-container" v-if="project.slides[project.slideIndex].text.length>0">
           <!-- Title -->
           <div class="title">
-            {{project.title}}
-            <br>
+            <div>{{project.title}}</div>
 
             <div class="subtitle">
               <span class="date">{{project.date}}</span>
@@ -148,6 +147,7 @@ a {
 }
 
 .subtitle {
+  margin-top: 0.5em;
   font-size: 0.9rem;
   display: flex;
   justify-content: space-between;

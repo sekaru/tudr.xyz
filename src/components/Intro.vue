@@ -13,7 +13,7 @@
     <!-- <h2>Motion Stills</h2> -->
     <!-- <h3><router-link class="nav-link" :to="'motionstills'">Motion Stills</router-link></h3> -->
 
-    <p style="text-align: right">Compsci Grad. Currently working at Capital One. Interested in networking, IoT, tools and game development</p>
+    <p style="text-align: right">Data Engineer at Capital One. Compsci Grad. Interested in networking, IoT, tools and game development</p>
   </div>
 </template>
 
